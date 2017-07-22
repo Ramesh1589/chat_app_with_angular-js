@@ -1,0 +1,91 @@
+<center>
+    <div flex layout-fill ng-cloak layout="row" style="height: 600px;width:900px;border: solid black 1px" >
+    <div flex = "33"  layout="column">
+            <md-toolbar flex = "40" class = "md-accent" flex = "33">
+                <md-list flex = "80" layout="column" layout-align="center center">
+                    <md-list-item  ng-click="null">
+                        <img ng-src="{{image}}"   class = "md-avatar icon">
+                    </md-list-item>
+                    <div flex="20">
+                        {{name}}
+                    </div>
+                </md-list>
+            </md-toolbar>
+        <div flex="50" style = "border-right: 1px solid deepskyblue">
+            <div ng-repeat = "a in users" style = "border-radius:10px;padding:5px;border: 1px solid lightgrey" ng-click="show(a.UID)">
+            <div style = "float: left;border-radius: 50%; width: 10px;height: 10px;background-color:{{a.color}}"></div>
+                <div>{{a.Name}}</div>
+        </div>
+        </div>
+        <div flex="10"  style = "border-right: 1px solid deepskyblue">
+            <md-button aria-label = "signout" class = "md-raised md-primary md-cornered outbtn " ng-click="signout()" >
+                SignOut
+                </md-button>
+        </div>
+        </div>
+        <div flex = "75" layout="column">
+             <md-content flex = "90" scroll-glue-bottom schroll-bottom="chats">
+                    <md-subheader class = "md-warn">
+                        <md-toolbar layout-align="start" md-scroll-shrink layout = "row">
+                            <div class="md-toolbar-tools" flex = "90">
+                                <md-list-item  ng-click="null">
+                                    <img ng-src="{{im}}" class = "md-avatar icon">
+                                </md-list-item>
+
+                            </div>
+                            <div flex="10">
+                                <md-button class="md-fab md-mini" aria-label="group" ng-click = "show(1)">
+                                    <md-icon md-svg-src="grp_chat.svg"></md-icon>
+                                </md-button>
+                            </div>
+                        </md-toolbar>
+                    </md-subheader>
+                    <md-list  flex thumbnails>
+                        <md-list-item   ng-click="null" ng-repeat = "a in chats" style = "margin-bottom : 4px;margin-top : 4px;position:relative;text-align:right;"  >
+
+                            <div  ng-if = "a.UID!=UID" layout-padding  layout="row" layout-align="start center" style ="word-wrap: break-word;width:100%;margin-left:50px">
+                                <div style="border-radius : 10px 10px 10px 10px;background-color:lightgreen;width:50%">
+                                    <div class="arrow-left" style = "position : absolute;top:21px;left:64px"></div>
+                                    <div class="imagedp">
+                                        <img ng-src="{{a.image}}" class = "md-avatar" style = "position:absolute;margin :0;"  ng-class = "a.UID==UID ? 'pos' : 'rev_pos'">
+                                    </div>
+                                    {{a.user}}<br/>
+                                    <div id = "`{{a.data}}" btf-markdown="a.data">
+                                    </div>
+                                    <br/>
+                                    {{a.timestamp | timeAgo}}
+                                </div>
+                            </div>
+
+                            <div  ng-if = "a.UID==UID" layout-padding  layout="row" layout-align="end center" style ="word-wrap: break-word;width:100%;margin-right:50px">
+                                <div style="border-radius : 10px 10px 10px 10px;background-color: red;width:50%">
+                                    <div class="arrow-right" style = "position : absolute;top:21px;right:64px"></div>
+                                    <div class="imagedp-right">
+                                        <img ng-src="{{a.image}}" class = "md-avatar" style = "position:absolute;margin : 0;"  ng-class = "a.UID==UID ? 'pos' : 'rev_pos'">
+                                    </div>
+                                     {{a.user}}
+                                    <div id = "{{a.data}}" btf-markdown="a.data">
+                                    </div>
+                                  <br/>
+                                    {{a.timestamp | timeAgo}}
+                                </div>
+                            </div>
+
+
+
+                            <!--{{a.timestamp}}-->
+                            </md-list-item>
+                      </md-list>
+                </section>
+            </md-content>
+            <div flex = "10" >
+                <form style="width:100%;height: 100%" name = "chatip"  novalidate>
+                    <textarea bot  style = "resize:none;height:100%;border:1px;background-color:#ffffe6;color:black;display:block;width:100%;border:0;padding : 0" type="text" ng-model = "ip" ng-keypress="send($event)" name = "chat" placeholder="Type a Message" required></textarea>
+                 </form>
+                <input type = "file" id = "upload">
+            </div>
+        </div>
+
+
+    </div>
+</center>

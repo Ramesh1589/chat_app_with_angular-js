@@ -1,0 +1,29 @@
+{
+  "name": " neeraj",
+  "authors": [
+    " neeraj <goelneeraj82@gmail.com>"
+  ],
+  "description": "chat app",
+  "main": "4index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-block-ui": "^0.2.2",
+    "angular-emoji-filter-hd": "^0.0.9",
+    "angular-emoji": "angular-emoji-filter#^0.0.2",
+    "angular-timeago": "^0.4.3",
+    "angularfire": "^2.0.1",
+    "ng-emoticons": "^2.0.1",
+    "firebase": "^3.2.0",
+    "angular-markdown-directive": "^0.3.1",
+    "angular-linkify": "^1.2.0"
+  }
+}

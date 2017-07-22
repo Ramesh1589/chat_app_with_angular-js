@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="spinkit.css" rel = "stylesheet">
+    <link href="please-wait.css" rel="stylesheet">
+    <link href = "angular-block-ui.css" rel="stylesheet">
+     <script type="text/javascript" src="please-wait.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-embed/2.1.1/ng-embed.min.css"/>
+    <link rel='stylesheet' href='loading-bar.min.css' type='text/css' media='all' />
+    <style>
+        .arrow-right {
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+
+        border-left: 10px solid yellow;
+    }
+    .arrow-left {
+        width: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+
+        border-right:10px solid lightgreen;
+    }
+    .pos{
+    right : 0px;
+    }
+    .rev_pos{
+        left : 0px;
+    }
+        .imagedp{
+            position: absolute;
+            left:0px;
+        }
+    .imagedp-right{
+        position: absolute;
+        right:0px;
+    }
+    </style>
+     </head>
+<body ng-app = "myapp">
+<div class = "inner" ng-view>
+</div>
+<script type="text/javascript" src="please-wait.js"></script>
+<script type="text/javascript">
+
+    var loading_screen = pleaseWait({
+        logo: "./logo.png",
+        backgroundColor: '#f46d3b',
+        loadingHtml: "<p style = 'color:white'>please Wait</p><div class='sk-cube-grid'> <div class = 'sk-cube sk-cube1'></div> <div class= 'sk-cube sk-cube2'></div> <div class='sk-cube sk-cube3'></div> <div class='sk-cube sk-cube4'></div> <div class='sk-cube sk-cube5'></div> <div class='sk-cube sk-cube6'></div> <div class='sk-cube sk-cube7'></div> <div class='sk-cube sk-cube8'></div> <div class='sk-cube sk-cube9'></div> </div>"    });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script src="angular-block-ui.js"></script>
+<script type='text/javascript' src='loading-bar.min.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="angular-aria.js"></script>
+<script src="angular-messages.min.js"></script>
+<script src="angular-material.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+<link rel = "stylesheet" href = "style.css">
+<script src = "angular-timeago.js"></script>
+<script src="controllers.js"></script>
+<script src = "services.js"></script>
+<script src = "underscore-min.js"></script>
+<script src="angular-route.js"></script>
+<script src="jquery.min.js"></script>
+<script src="scrollglue.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script src="angular-sanitize.js"></script>
+<script src="Showdown.js"></script>
+<script src = "markdown.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/ng-embed/2.1.1/ng-embed.min.js"></script>
+
+
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAxw_SWREfv54x6HRZb-1BCZD0ygdhMn8o",
+        authDomain: "chatapp-82eac.firebaseapp.com",
+        databaseURL: "https://chatapp-82eac.firebaseio.com",
+        projectId: "chatapp-82eac",
+        storageBucket: "gs://chatapp-82eac.appspot.com",
+        messagingSenderId: "1091670289619"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+<script src = "app.js"></script>
+</body>
+</html>

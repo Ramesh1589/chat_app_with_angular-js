@@ -1,0 +1,20 @@
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<di
+<script>
+                var img = document.createElement("img");
+                img.src = window.URL.createObjectURL(files[i]);
+                console.log(img.src)
+                img.height = 60;
+                img.onload = function() {
+                    window.URL.revokeObjectURL(this.src);
+                    console.log(this.src)
+                }
+        }
+    }
+</script>
+</body>
+</html>
